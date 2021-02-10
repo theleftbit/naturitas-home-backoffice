@@ -11,14 +11,11 @@ RUN touch /logs/access.log
 RUN touch /logs/gunicorn.log
 
 # Set up requirements directory
-RUN mkdir /requirements
-ADD ./requirements /requirements/
+COPY ./requirements /requirements/
 
 # Set up code directory
-RUN mkdir /code
 WORKDIR /code
-ADD ./api /code/
-COPY ./docker/entrypoints/entrypoint.sh /entrypoint.sh
+COPY ./api /code/
 
 # Set up nginx
 COPY ./docker/docker_nginx/django_nginx.conf /etc/nginx/sites-available/django_nginx.conf
