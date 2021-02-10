@@ -1,0 +1,19 @@
+# Django
+Django==3.1.5
+# Django Rest Framework
+djangorestframework==3.12.2
+
+# Django Rest Framework Dependencies:
+# Markdown support for the browsable API.
+Markdown==3.3.3
+# Filtering support
+django-filter==2.4.0
+
+#Cors headers
+django-cors-headers==3.7.0
+
+# Python mySQL connection
+mysqlclient==2.0.3
+
+# Model translations
+django-modeltranslation==0.16.1

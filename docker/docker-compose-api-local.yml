@@ -1,0 +1,44 @@
+version: '3'
+services:
+  naturitas_api:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile-api-local
+    image: naturitas-api:0.0.1
+    container_name: "naturitas_api"
+    volumes:
+      - ../api:/code
+    ports:
+      - "8000:8000"
+    links:
+      - naturitas_db
+    depends_on:
+      - naturitas_db
+    environment:
+      - DJANGO_SETTINGS_MODULE=app.conf.local
+      - PUBLIC_WEB_BASE_URL=https://www.naturitas.es
+      - DB_HOST=naturitas_db
+      - DB_USER=naturitas_user
+      - DB_PWD=ftgMw4Hs!eJgvoXD7pSZ
+      - DB_NAME=naturitas
+      - DB_CONN_MAX_AGE=0
+      - SUPERADMIN_EMAIL=superadmin@theleftbit.com
+      - SUPERADMIN_PASSWORD=@6awOeV%5%!f5&olPLe6etvL
+    command: >
+      /entrypoint-local.sh
+
+  naturitas_db:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile-mysql-local
+    image: naturitas_db:0.0.1
+    container_name: "naturitas_db"
+    volumes:
+      - "./docker_mysql/.data/db:/var/lib/mysql"
+      - "./docker_mysql/base_schema.sql:/docker-entrypoint-initdb.d/00-base_schema.sql"
+    environment:
+      MYSQL_ROOT_PASSWORD: "ftgMw4Hs!eJgvoXD7pSZ"
+      MYSQL_USER: "naturitas_user"
+      MYSQL_PASSWORD: "ftgMw4Hs!eJgvoXD7pSZ"
+    ports:
+      - "3306:3306"

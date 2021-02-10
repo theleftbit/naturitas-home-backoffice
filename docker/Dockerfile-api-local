@@ -1,0 +1,21 @@
+# Here, for extra care, we specify a specific Debian release as we need to install some additional packages.
+# However, I think it wouldn't be necessary since they are some common packages
+FROM python:3.9.1-buster
+
+
+# STEP 1 - ENVIRONMENT
+ENV PYTHONUNBUFFERED 1
+RUN apt-get update && apt-get install -y gettext
+
+# STEP 2 - PROJECT
+RUN mkdir /code
+RUN mkdir /rsc
+RUN mkdir /requirements
+ADD ./api /code/
+COPY ./rsc/wait-for-it.sh /rsc/wait-for-it.sh
+ADD ./requirements /requirements/
+COPY ./docker/entrypoints/entrypoint-local.sh /entrypoint-local.sh
+WORKDIR /code
+
+# STEP 3 - INSTALL REQUIREMENTS
+RUN pip install -r /requirements/local.txt
