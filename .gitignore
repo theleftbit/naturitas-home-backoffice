@@ -1,10 +1,23 @@
-.vscode/
-*.idea/
-
-db.sqlite3
-
-node_modules
-
-.env
-
+### Python ###
+# Byte-compiled / optimized / DLL files
 __pycache__/
+*.py[cod]
+*$py.class
+
+# Mac
+.DS_Store
+._*
+
+# Docker
+docker/docker_mysql/.data/
+dump.rdb
+IATI Backend.iml
+misc.xml
+workspace.xml
+iati_api/locale/en/LC_MESSAGES/django.mo
+iati_api/locale/es/LC_MESSAGES/django.mo
+iati_api/locale/pt/LC_MESSAGES/django.mo
+.idea/Backend.iml
+.idea/modules.xml
+*.mo
+*.iml
