@@ -10,6 +10,7 @@ __pycache__/
 
 # Docker
 docker/docker_mysql/.data/
+docker/docker_postgres/.data/
 dump.rdb
 IATI Backend.iml
 misc.xml

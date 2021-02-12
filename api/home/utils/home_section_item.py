@@ -5,7 +5,7 @@ from home.models.home_section_item import HomeSectionItem
 
 SECTIONS = [
     {
-        'type_id': HomeSectionType.HOME_SECTION_BANNERS_ID,
+        'type_id': HomeSectionType.HOME_SECTION_TYPE_BANNERS_ID,
         'items': [
             {
                 "image": "banner_6euros_ES.jpg",
@@ -32,7 +32,7 @@ SECTIONS = [
         ]
     },
     {
-        'type_id': HomeSectionType.HOME_SECTION_CATEGORIES_ID,
+        'type_id': HomeSectionType.HOME_SECTION_TYPE_CATEGORIES_ID,
         'items': [
             {
                 "id": "26095",
@@ -73,7 +73,7 @@ SECTIONS = [
         ]
     },
     {
-        'type_id': HomeSectionType.HOME_SECTION_BRANDS_ID,
+        'type_id': HomeSectionType.HOME_SECTION_TYPE_BRANDS_ID,
         'items': [
             {
                 "id": "7435",

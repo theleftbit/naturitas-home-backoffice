@@ -17,3 +17,4 @@ mysqlclient==2.0.3
 
 # Model translations
 django-modeltranslation==0.16.1
+psycopg2-binary==2.8.5

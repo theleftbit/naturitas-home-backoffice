@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-sleep 10
-/rsc/wait-for-it.sh -h naturitas_db -p 3306 -t 120
+sleep 30
 python manage.py makemigrations
 python manage.py migrate --noinput
 

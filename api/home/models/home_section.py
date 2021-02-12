@@ -2,6 +2,10 @@ from django.db import models
 
 
 class HomeSection(models.Model):
+    HOME_SECTION_BANNERS_ID = 1
+    HOME_SECTION_CATEGORIES_ID = 2
+    HOME_SECTION_BRANDS_ID = 3
+
     type = models.ForeignKey('HomeSectionType', blank=False, null=False, on_delete=models.CASCADE,
                              related_name='sections')
     title = models.CharField(max_length=50, blank=True, null=True)
