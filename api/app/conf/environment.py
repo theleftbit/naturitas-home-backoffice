@@ -15,7 +15,7 @@ DB_CHARSET = env['DB_CHARSET'] if 'DB_CHARSET' in env else 'utf8mb4'
 
 
 # DOMAIN
-API_DOMAIN = env['API_DOMAIN'] if 'API_DOMAIN' in env else 'api.naturitas.com'
+API_DOMAIN = env['API_DOMAIN'] if 'API_DOMAIN' in env else 'naturitashome.herokuapp.com'
 
 # APP
 SUPERADMIN_EMAIL = env['SUPERADMIN_EMAIL'] if 'SUPERADMIN_EMAIL' in env else ''
