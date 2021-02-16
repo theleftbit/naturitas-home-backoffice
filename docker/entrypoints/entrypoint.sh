@@ -15,8 +15,8 @@ tail -n 0 -f /logs/*.log &
 
 # Set up nginx configuration
 echo Configuring nginx
-envsubst < /etc/nginx/sites-available/django_nginx.conf > /etc/nginx/sites-enabled/default
-echo "daemon off;" >> /etc/nginx/nginx.conf
+# envsubst < /etc/nginx/sites-available/django_nginx.conf > /etc/nginx/sites-enabled/default
+# echo "daemon off;" >> /etc/nginx/nginx.conf
 
 # Start Gunicorn processes
 echo Starting Gunicorn.
